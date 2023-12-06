@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{width: 100%;
+    background-color: white;
+    height: 60px;
+    display: flex;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+} 
+.logo img {
+    top: 5px;
+    height:60px ;
+
+}
+
+.searchBar{
+    list-style-type: none;
+    border-style: none;
+    transform-style: none;
+}
+.hero{
+    display: flex;
+    justify-content:space-around;
+    background-color: rgb(228, 219, 212);
+}
+.hero img{
+    margin: 20px;
+    padding: 0;
+}
+.mainText{
+    padding-top: 180px;
+}
+
+.mainText button{
+    width: 140px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-top: 22px;
+}
+
+.mainText button:hover{
+
+    background-color: transparent;
+}
+
+.main{
+    display: flex;
+       justify-content: flex-start; 
+       flex-direction: row;
+}
+.filter {
+    display: block;
+    margin: 6px;
+
+}
+
+#list{
+   margin: 20px;
+
+list-style-type: none;
+gap: 40px;
+}
+
+/* .men{
+    width: 300px;
+    height: 250px;
+} */
+
+.men{
+    width: 100%;
+}
+
+.head{
+    margin-top: 30px;
+}
+
+
+.head h1{
+
+display: flex;
+justify-content: center;
+    
+}
+.menCard{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 60%;
+    height: 580px;
+
+    display: flex;
+
+}
+.card{
+    width: 300px;
+    background-color: #fff;
+    margin-inline: 22px;
+    margin-top: 24px;
+}
+
+
+.womenCard{
+    margin-top: 10%;
+    margin-left: 10%;
+    height: 610px;
+    width: 60%;
+    display: flex;
+}
+.slider{
+    height: 60%;
+    overflow: hidden;
+  }
+
+  
+  .slider .figure{
+  position: relative;
+  width: 500%;
+  
+  left: 0;
+  animation: 15s slider infinite;
+  }
+  .slider .figure img {
+    float: left ;
+   margin: 0;
+   left: 0;
+aspect-ratio: 9/4;
+    width: 20%;
+  }
+  
+  
+  @keyframes slider {
+    0%{left: 0;}
+    20%{left: -100%;}
+    40%{left: -200%;}
+    60%{left: -300%;}
+    80%{right: -400%;}
+    100%{right: -500%;}
+  } 
+  
+
+.head h1{
+    margin: 30px;
+}
+  
+ 
+.blogs{
+    display:flex;
+    height: 60%;
+    width: 100%;
+    margin: px;
+}
+
+
+  .footer{
+    height: 200px;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+    background-color:brown;
+    text-decoration: white;
+  }
+
+  .product-detail{
+    display: flex;
+    margin: 20px;
+  }
+  
+ .product-detail h1{
+    margin: 30px;
+
+ }
+  .product-detail button{
+ margin: 50px;
+ background: transparent;
+  }
+  
+
+  @media screen and (max-width:900px){
+    .menCard{
+        display: block;
+        margin: 20;
+        height: 1110px;
+        margin-right: 10px;
+    }
+    .womenCard{
+       
+        display: block;
+        height: 1410px;
+        margin-right: 10px;
+
+    }
+    .hero{
+        display: block;
+    }
+    
+    .slider-box {
+    margin-top: 100px;
+margin: 100px;    
+    }
+    .blogs{
+        display: block;
+        margin: 20;
+        height: 1110px;
+        margin-right: 10px;
+    }
+    
+    .filter{
+        display: none;
+    }
+  }
+    
+ 
+  
