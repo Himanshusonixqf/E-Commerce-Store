@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Dancing+Script:wght@700&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <div class="container">
+        <nav>
+           
+            <div class="logo">
+              <a href="/">  <img src="vogue-png-logo-5764.png" alt=""> </a>
+            
+            </div>
+           
+            <div class="searchButton">
+                <input type="text" class="searchInput"placeholder="Search for product & more.">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="icons">
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-bar fa-bar"></i>
+
+            </div>
+            <div class="humb">
+                <span class="hamburger">
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="1.5"
+                 stroke="currentColor"
+                 class="w-6 h-6">
+                 <path
+                   stroke-linecap="round"
+                   stroke-linejoin="round"
+                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+               </svg>
+             </span>
+           </div>
+            
+            <div class="cart">
+                <a href="cart.js">Carts</a>
+           
+           
+                <div id="cartcontain" class="cartcontainer">
+  
+
+                </div> 
+            </div>
+
+            
+        </nav>
+        
+    <section class="section">
+          <div class="cartitem">
+            <div class="cart_header">
+              <p class="cart_header_id">Product ID</p>
+              <p class="cart_header_title">Product Title</p>
+              <p class="cart_header_image">Product Image</p>
+              <p class="cart_header_price">Price</p>
+              <p class="cart_header_delete">Delete</p>
+            </div>
+            <div class="cart-items"></div>
+          </div>
+      </section>
+
+      <script>
+
+const CartItems = document.querySelector(".cart-items");
+
+let cartTotal = 0;
+function displayCartItems() {
+  const items = JSON.parse(localStorage.getItem("parsecart"));
+  items.forEach((item) => {
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart_item";
+    cartItem.innerHTML = `
+    <p class="cart_id">${item.id}</p>
+              <p class="cart_title">${item.title}</p>
+              <img src="${item.image}" alt="${item.title}" class="cart_img" />
+              <p class="cart_price">${item.price}</p>
+              <p class="cart_delete">Delete</p>
+    `;
+    CartItems.appendChild(cartItem);
+  });
+}
+
+displayCartItems();
+      </script>
+
+      <!-- <style>
+      
+      .cartitem{
+        margin-top: 90px;
+       padding: 190px;
+        color: rgb(119, 223, 16);
+      }
+
+      .cart_header{
+        display: flex;
+        gap: 90px;
+      }
+
+      
+.cart_product {
+  display: flex;
+}
+.cart_img {
+  width: 7%;
+}
+.cart_total {
+  margin-top: 2rem;
+  text-align: right;
+}
+        </style> -->
+<!-- <script>
+const carditem=document.querySelector(".cartitem");
+const parsecart=document.querySelector("parsecart");
+    
+ function displaycart(){
+    const itemsfromcart=JSON.parse(localStorage.getItem(parsecart));
+    console.log(itemsfromcart);
+    itemsfromcart.forEach(item=>{
+        const divforcart=document.createElement("div");
+        divforcart.classList.add("crtcontain");
+
+        divforcart.innerHTML=`
+        <div class="crtcontain">
+        <img src=${item.src} alt="" height="410px">
+        <p>${item.id}</p>
+        <p>${item.title}</p>
+        <p>${item.discound}</p>
+    </div>
+        `
+        document.querySelectorAll("cartitem").appendChild(divforcart);
+    })
+ }
+ displaycart();
+</script> -->
+
+      <footer class="footer">
+        <div class="text">
+            <h3>About Us</h3>
+            <p>Trending Cloth</p>
+            <p>Trends</p>
+            <p>search</p>
+            <p>Invention</p>
+
+        </div>
+        <div class="text">
+            <h3>Women</h3>
+            <p>Best</p>
+            <p>Trend Wears</p>
+            <p>Affordable </p>
+            <p>Quality</p>
+
+        </div>
+        <div class="text">
+            <h3>Men</h3>
+            <p>Best</p>
+            <p>Trend Wear</p>
+            <p>Affordable</p>
+            <p>Quality</p>
+
+        </div>
+        <div class="text">
+            <h3>Connect Us</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>YouTube</p>
+
+        </div>
+    </div> 
+</div>
+</footer>
+
+
+<script src="index.js"></script>
+<script src="cart.js"></script>
+</body>
+</html> 
+
