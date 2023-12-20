@@ -5,11 +5,55 @@ let p=document.querySelectorAll("p");
 let addcart=document.querySelectorAll("addcart");
 let addcartbtn =document.querySelectorAll(".addcartbtn");
 let cartcontain= document.getElementById("cartcontain");
+let hamburger = document.querySelector(".hamburger");
+let humburgericon=document.querySelector(".humburgericon");
 
+hamburger.addEventListener("click",function(){
+    
+    const extradiv=document.createElement("div");
+    extradiv.classList.add("extradiv");
+
+    extradiv.innerHTML=`
+    <div class="extradiv">
+        <div class="cart">
+            <a href="cart.html">Carts</a>
+                <ul id="list-humburger" onclick=hide()>
+                        
+                <li> <a href="/sign-up.html">signup</a></li>
+                <li> <a href="/login.html">login</a></li>
+                <li><a href="#men">MEN</a></li>
+                <li><a href="#women">WOMEN</a></li>
+                <li><a href="#slider">TRENDS</a></li>
+                <li><a href="#blog">BLOGS</a></li>
+                    </ul>
+        
+                
+    </div>
+    </div>`
+
+    humburgericon.appendChild(extradiv);
+
+    
+})
+
+function hide(){
+    let extradiv=document.querySelector(".extradiv");
+  extradiv.style.display="none";
+
+}
+  
+// const listitem=document.getElementsByTagName("li");
+ 
+// listitem.forEach(currlist=>{
+//     currlist.addEventListener("click",()=>{
+//     document.querySelector(".extradiv").style.display="none";
+//     })
+// })
 
 
 addcartbtn.forEach(button=>{
 button.addEventListener("click",()=>{
+    alert("added");
     const id=button.getAttribute("data-id");
     const title=button.getAttribute("data-title");
     const discound=button.getAttribute("data-discound");
@@ -69,42 +113,112 @@ const parsecart=document.querySelector("parsecart");
 
 // })
 
-searchInput.addEventListener("keyup",function(event){
-    const q=event.target.value.toLowerCase();
-    document.querySelector( ".usefilter").style.display="none";
-    
-    console.log(q);
+// searchInput.addEventListener("keyup",function(event){
+//     const q=event.target.value.toLowerCase();
+  
+//     const men=document.querySelector(".men");
+//     if(q==men){
+//         document.querySelector( ".usefilter").style.display="none";
+//         document.querySelector("body").appendChild(men);
+//     }else{
+//         const women=document.querySelector(".women");
+//         document.querySelector( ".usefilter").style.display="none";
+//         document.querySelector("body").appendChild(women);
+//     }
+// })
 
-    let title=document.querySelectorAll(".title");
-    q.toLowerCase().includes(title)
+searchInput.addEventListener("keyup",function(event){
+    let query=event.target.value;
+console.log(query);
+document.querySelector( ".container").style.display="none";
+ cards.forEach(crdelement => {
+    
+     
+     if(crdelement.textContent.toLowerCase().includes(query)){
+        document.querySelector("body").appendChild(crdelement);
+
+     }else{
+        console.log("not available");
+        
+     }
+    
+ });
+})
+
+//
+// let div= document.createElement("div");
+// div.classList.add("product-detail");
+
+// div.innerHTML=`
+// <img id="inner" src=${curCard.firstElementChild.src} alt="">
+
+// <div className="product-detail">
+// <p>  ${curCard}</p>
+// <p> Kat Farmer is a fashion blogger, wardrobe consultant, personal stylist</p>
+
+// <button class ="addcart" onclick="buypage()">Buy Now</button>
+//  <button class="addcartbtn" >Add To Cart</button>
+//             <a href="">Back</a>
+// </div>
+// `
+
+
+
+
+
+    // })
+    
+
+    // searchInput.addEventListener("keyup",function(event){
+    //     let query=event.target.value;
+    // console.log(event);
+    // document.querySelector( ".container").style.display="none";
+    // const q=event.target.value.toLowerCase();
+    // document.querySelector( ".usefilter").style.display="none";
+    
+    // console.log(q);
+
+    // let title=document.querySelectorAll(".title");
+    // q.toLowerCase().includes(title)
   
  
-     title.forEach((event)=>{
-    //     if(event=q){
-       if( q==event  ){
-
-            let div= document.createElement("div");
-            div.classList.add("product-fliter");
+    //  title.forEach((event)=>{
+    //     let text=event.textContent
+    //     if(text.toLowerCase().includes(q.toLowerCase())){
+    //         let div= document.createElement("div");
+    //         div.classList.add("product-fliter");
             
-            div.innerHTML=`
+    //         div.innerHTML=`
             
-            <div className="product-filter">
-            <p>  ${q}</p>
-            <p> Kat Farmer is a fashion blogger, wardrobe consultant, personal stylist</p>
-            <p> Kat Farmer is a fashion blogger, wardrobe consultant, personal stylist</p>
+    //         <div className="product-filter">
+    //         <p>  ${q}</p>
             
           
-            </div>
-            `
-            
-            
-            document.querySelector("body").appendChild(div);
+    //         </div>
+    //         `
 
-        }else{console.log(false);}
-     })
+    //         document.querySelector("body").appendChild(div);
+    //     }else{
+    //         event.style.display="none"
+    //     }
+    //     if(event=q){
+    //    if( q==event  ){
+
+    // const id=button.getAttribute("data-id");
+    // const title=button.getAttribute("data-title");
+    // const discound=button.getAttribute("data-discound");
+    // const img=button.getAttribute("data-img");
+
+    // const cartitem={id ,title ,img ,discound}   
+            
+            
+           
+
+        // }else{console.log(false);}
+//      })
     
 
-})
+// })
  
 
   
@@ -126,7 +240,7 @@ div.innerHTML=`
 <p> Kat Farmer is a fashion blogger, wardrobe consultant, personal stylist</p>
 
 <button class ="addcart" onclick="buypage()">Buy Now</button>
-<a href="#addcart"> <button class="addcart" onclick="addtocart()">Add To Cart</button> </a>
+ <button class="addcartbtn" >Add To Cart</button>
             <a href="">Back</a>
 </div>
 `
@@ -135,10 +249,13 @@ div.innerHTML=`
 document.querySelector("body").appendChild(div);
 
 
+
     })
+    
 
     
 });
+
 
 function buypage(){
    let div =document.createElement("div");
