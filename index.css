@@ -87,6 +87,7 @@ left: 30%;
     padding: 1.5rem;
     background-color: var(--colo-white-2);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-radius: 1px;
@@ -389,13 +390,14 @@ aspect-ratio: 9/4;
     width: 4.5rem;
     height: 4.5rem;
   }
- 
-  @media screen and (min-width: 992px){
+
+  /* @media screen and (min-width: 992px){ */
 
    
 
     .menCard{
-        display: block;
+        display: flex ;
+        flex-wrap: wrap;
         margin: 20;
         height: 1110px;
         margin-right: 10px;
@@ -425,14 +427,16 @@ display: none;
   
     .womenCard{
        
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         height: 1410px;
         margin-right: 30px;
 
     }
     .hero{
       width: 100%;
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
     }
     
  
@@ -460,7 +464,7 @@ display: none;
   }
 } 
  
-@media screen and (max-width: 600px){
+@media screen and (max-width: 750px){
   .humburgericon{
     display: block;
   }
@@ -502,7 +506,8 @@ row-gap: 20px;
 }
    .womenCard{
        
-    display: block;
+    display: flex ;
+    flex-wrap: wrap;
     height: 1410px;
     margin-right: 30px;
 
@@ -549,6 +554,6 @@ padding: 6px;
 .footer{
   width: 200%;
   background-color: #cf4918;
-}}}
+}}
  
   

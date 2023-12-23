@@ -8,6 +8,7 @@ let cartcontain= document.getElementById("cartcontain");
 let hamburger = document.querySelector(".hamburger");
 let humburgericon=document.querySelector(".humburgericon");
 
+
 hamburger.addEventListener("click",function(){
     
     const extradiv=document.createElement("div");
@@ -16,11 +17,12 @@ hamburger.addEventListener("click",function(){
     extradiv.innerHTML=`
     <div class="extradiv">
         <div class="cart">
+            <a href="/">Home</a>
             <a href="cart.html">Carts</a>
                 <ul id="list-humburger" onclick=hide()>
                         
-                <li> <a href="/sign-up.html">signup</a></li>
-                <li> <a href="/login.html">login</a></li>
+                <li> <a href="/sign-up.html">SIGNUP</a></li>
+                <li> <a href="/login.html">LOGIN</a></li>
                 <li><a href="#men">MEN</a></li>
                 <li><a href="#women">WOMEN</a></li>
                 <li><a href="#slider">TRENDS</a></li>
@@ -38,6 +40,7 @@ hamburger.addEventListener("click",function(){
 
 function hide(){
     let extradiv=document.querySelector(".extradiv");
+    
   extradiv.style.display="none";
 
 }
@@ -238,6 +241,10 @@ div.innerHTML=`
 <div className="product-detail">
 <p>  ${curCard}</p>
 <p> Kat Farmer is a fashion blogger, wardrobe consultant, personal stylist</p>
+<p> Kat Farmer is a fashion blogger, wardrobe consultant, personal stylist</p>
+<p> ${curCard.textContent.title}</p>
+<p> Best Quality</p>
+<p> Trending Product </p>
 
 <button class ="addcart" onclick="buypage()">Buy Now</button>
  <button class="addcartbtn" >Add To Cart</button>
@@ -278,7 +285,7 @@ function buypage(){
            <option value="ppay">Phonepay</option>
            <option value="paytym">Patym</option>
        </select>
-       <button>submit</button> 
+       <a href="/" <button>submit </button> </a>
        <a href="">Back</a>
    </div>
   
